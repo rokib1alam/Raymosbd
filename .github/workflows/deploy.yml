@@ -16,7 +16,7 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          ARGS: "-rlgoDZz --delete"
+          ARGS: "-rlgodzz --delete"
           SERVER_PORT: "22"
           REMOTE_HOST: "rongin.withbd.com"
           REMOTE_USER: "ae27c3a9d7" # আসল SSH Username
