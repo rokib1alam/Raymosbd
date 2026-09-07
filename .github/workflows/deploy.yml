@@ -3,7 +3,7 @@ name: Deploy to cPanel
 on:
   push:
     branches:
-      - main  # আপনার ব্রাঞ্চের নাম main নাকি master তা নিশ্চিত হয়ে নিন
+      - main
 
 jobs:
   deploy:
@@ -18,6 +18,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-rlgoDZz --delete"
           SERVER_PORT: "22"
-          REMOTE_HOST: ${{ secrets.SSH_HOST }}
-          REMOTE_USER: ${{ secrets.SSH_USER }}
+          REMOTE_HOST: "rongin.withbd.com"
+          REMOTE_USER: "ae27c3a9d7" # আসল SSH Username
           TARGET: "/home/sites/32a/a/ae27c3a9d7/www.withbd.com/rongin"
