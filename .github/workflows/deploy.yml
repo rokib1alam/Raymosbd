@@ -3,17 +3,17 @@ name: Deploy to cPanel
 on:
   push:
     branches:
-      - main  
+      - main  # আপনার ব্রাঞ্চের নাম main নাকি master তা নিশ্চিত হয়ে নিন
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: easingthemes/ssh-deploy@main
+        uses: actions/checkout@v4
 
       - name: Sync Files via SSH
-        uses: easingthemes/ssh-deploy-actions@main
+        uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-rlgoDZz --delete"
