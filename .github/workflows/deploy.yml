@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: easingthemes/ssh-deploy@main
 
       - name: Sync Files via SSH
         uses: easingthemes/ssh-deploy-actions@main
