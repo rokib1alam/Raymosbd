@@ -364,7 +364,7 @@
 
                                         <ul class="row list-unstyled products-group no-gutters">
 
-                                            @forelse($featured as $product)
+                                            @forelse($featured->take(6) as $product)
 
                                                 <li class="col-6 col-wd-3 col-md-4 product-item">
 
@@ -539,7 +539,7 @@
 
                                         <ul class="row list-unstyled products-group no-gutters">
 
-                                            @forelse($popular_product as $product)
+                                            @forelse($popular_product->take(6) as $product)
 
                                                 <li class="col-6 col-wd-3 col-md-4 product-item">
 
@@ -697,7 +697,7 @@
 
                                         <ul class="row list-unstyled products-group no-gutters">
 
-                                            @forelse($top_rated_products as $product)
+                                            @forelse($top_rated_products->take(6) as $product)
 
                                                 <li class="col-6 col-wd-3 col-md-4 product-item">
 
