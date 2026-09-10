@@ -60,7 +60,12 @@ class FrontendController extends Controller
         $this->calculateAndSortRatings($top_rated_products);
 
         // Home Page Category
-        $home_category = Category::where('home_page',1)->orderBy('category_name', 'DESC')->get();
+        $home_category = Category::where('home_page', 1)
+        ->with(['products' => function ($query) {
+            $query->latest('id')->take(6);
+        }])
+        ->orderBy('category_name', 'DESC')
+        ->get();
          $settings=Setting::all();
         return view('frontend.pages.index', compact('sliders','settings','top_viewed_categories','trendy_product_new', 'brands', 'top_rated_products', 'bannerproduct', 'featured', 'popular_product', 'trendy_product','today_deal', 'home_category'));
     }

@@ -877,2974 +877,457 @@
                 <div class="container">
                     <!-- Nav Classic -->
                     <div class="position-relative text-center z-index-2 mb-3">
-                        <ul class="nav nav-classic nav-tab nav-tab-sm px-md-3 justify-content-start justify-content-lg-center flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble border-md-down-bottom-0 pb-1 pb-lg-0 mb-n1 mb-lg-0" id="pills-tab-1" role="tablist">
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link active " id="Tpills-one-example1-tab" data-toggle="pill" href="#Tpills-one-example1" role="tab" aria-controls="Tpills-one-example1" aria-selected="true">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        Best Deals
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Tpills-two-example1-tab" data-toggle="pill" href="#Tpills-two-example1" role="tab" aria-controls="Tpills-two-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        TV & Video
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Tpills-three-example1-tab" data-toggle="pill" href="#Tpills-three-example1" role="tab" aria-controls="Tpills-three-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        Cameras
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Tpills-four-example1-tab" data-toggle="pill" href="#Tpills-four-example1" role="tab" aria-controls="Tpills-four-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        Audio
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Tpills-five-example1-tab" data-toggle="pill" href="#Tpills-five-example1" role="tab" aria-controls="Tpills-five-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        Smartphones
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Tpills-six-example1-tab" data-toggle="pill" href="#Tpills-six-example1" role="tab" aria-controls="Tpills-six-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        GPS & Navi
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Tpills-seven-example1-tab" data-toggle="pill" href="#Tpills-seven-example1" role="tab" aria-controls="Tpills-seven-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        Computers
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Tpills-eight-example1-tab" data-toggle="pill" href="#Tpills-eight-example1" role="tab" aria-controls="Tpills-eight-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        Portable Audio
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Tpills-nine-example1-tab" data-toggle="pill" href="#Tpills-nine-example1" role="tab" aria-controls="Tpills-nine-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        Accessories
-                                    </div>
-                                </a>
-                            </li>
+                        <ul class="nav nav-classic nav-tab nav-tab-sm px-md-3 justify-content-start justify-content-lg-center flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble border-md-down-bottom-0 pb-1 pb-lg-0 mb-n1 mb-lg-0"
+                            id="pills-tab-1"
+                            role="tablist">
+
+                            @foreach($home_category as $key => $category)
+
+                                <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
+
+                                    <a class="nav-link {{ $key == 0 ? 'active' : '' }}"
+                                    id="Tpills-category-{{ $category->id }}-tab"
+                                    data-toggle="pill"
+                                    href="#Tpills-category-{{ $category->id }}"
+                                    role="tab"
+                                    aria-controls="Tpills-category-{{ $category->id }}"
+                                    aria-selected="{{ $key == 0 ? 'true' : 'false' }}">
+
+                                        <div class="d-md-flex justify-content-md-center align-items-md-center">
+                                            {{ $category->category_name }}
+                                        </div>
+
+                                    </a>
+
+                                </li>
+
+                            @endforeach
+
                         </ul>
                     </div>
                     <!-- End Nav Classic -->
 
                     <!-- Tab Content -->
                     <div class="tab-content" id="Tpills-tabContent">
-                        <div class="tab-pane fade pt-2 show active" id="Tpills-one-example1" role="tabpanel" aria-labelledby="Tpills-one-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Game Consoles</a></div>
-                                                            <h5 class="mb-0 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</a></h5>
-                                                        </div>
-                                                        <div class="mb-1 min-height-4-1-4">
-                                                            <a href="#" class="d-block text-center my-4 mt-lg-6 mb-lg-5 mt-xl-0 mb-xl-0 mt-wd-6 mb-wd-5"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/564X520/img2.jpg" alt="Image Description"></a>
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2 mb-3">
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img1.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #01"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img1.jpg" alt="Image Description">
+                        @foreach($home_category as $categoryIndex => $category)
 
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
+                            @php
+                                // এই category-এর সর্বোচ্চ 9টি product
+                                $products = $category->products->take(9);
+                            @endphp
+
+                            <div class="tab-pane fade pt-2 {{ $categoryIndex == 0 ? 'show active' : '' }}"
+                                id="Tpills-category-{{ $category->id }}"
+                                role="tabpanel"
+                                aria-labelledby="Tpills-category-{{ $category->id }}-tab">
+
+                                @if($products->count() > 0)
+
+                                    <div class="row no-gutters">
+
+                                        {{-- ========================= --}}
+                                        {{-- LEFT SIDE - 4 PRODUCTS --}}
+                                        {{-- ========================= --}}
+                                        <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
+
+                                            <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
+
+                                                @foreach($products->slice(0, 4) as $productIndex => $product)
+
+                                                    <li class="col-xl-6 product-item max-width-xl-100 {{ $productIndex < 2 ? 'remove-divider' : 'd-md-none d-wd-block product-item remove-divider' }}">
+
+                                                        <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
+
+                                                            <div class="product-item__inner bg-white p-3">
+
+                                                                <div class="product-item__body pb-xl-2">
+
+                                                                    {{-- Category Name --}}
+                                                                    <div class="mb-2">
+                                                                        <a href="{{ route('slug.handler', $category->category_slug) }}"
+                                                                        class="font-size-12 text-gray-5">
+                                                                            {{ $category->category_name }}
+                                                                        </a>
+                                                                    </div>
+
+                                                                    {{-- Product Name --}}
+                                                                    <h5 class="mb-1 product-item__title">
+                                                                        <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                        class="text-blue font-weight-bold">
+                                                                            {{ $product->product_name }}
+                                                                        </a>
+                                                                    </h5>
+
+                                                                    {{-- Product Image --}}
+                                                                    <div class="mb-2">
+                                                                        <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                        class="d-block text-center">
+
+                                                                            <img class="img-fluid"
+                                                                                src="{{ asset($product->thumbnail) }}"
+                                                                                alt="{{ $product->product_name }}">
+                                                                        </a>
+                                                                    </div>
+
+                                                                    {{-- Price --}}
+                                                                    <div class="flex-center-between mb-1">
+
+                                                                        <div class="prodcut-price">
+
+                                                                            @if($product->discount_price)
+                                                                                <div class="text-gray-100">
+                                                                                    {{ $setting->currency }}{{ $product->discount_price }}
+                                                                                </div>
+                                                                            @else
+                                                                                <div class="text-gray-100">
+                                                                                    {{ $setting->currency }}{{ $product->selling_price }}
+                                                                                </div>
+                                                                            @endif
+
+                                                                        </div>
+
+                                                                        {{-- Add to Cart --}}
+                                                                        <div class="d-none d-xl-block prodcut-add-cart">
+                                                                            <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                            class="btn-add-cart btn-primary transition-3d-hover">
+
+                                                                                <i class="ec ec-add-to-cart"></i>
+
+                                                                            </a>
+                                                                        </div>
+
+                                                                    </div>
+
                                                                 </div>
 
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img2.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #02"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img2.jpg" alt="Image Description">
+                                                                {{-- Footer --}}
+                                                                <div class="product-item__footer">
 
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
+                                                                    <div class="border-top pt-2 flex-center-between flex-wrap">
+
+                                                                        <a href="{{ route('compare.page') }}"
+                                                                        class="text-gray-6 font-size-13">
+
+                                                                            <i class="ec ec-compare mr-1 font-size-15"></i>
+                                                                            Compare
+
+                                                                        </a>
+
+                                                                        <a href="{{ route('wishlist') }}"
+                                                                        class="text-gray-6 font-size-13">
+
+                                                                            <i class="ec ec-favorites mr-1 font-size-15"></i>
+                                                                            Add to Wishlist
+
+                                                                        </a>
+
+                                                                    </div>
+
                                                                 </div>
 
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img3.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #03"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img3.jpg" alt="Image Description">
+                                                            </div>
 
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
+                                                        </div>
+
+                                                    </li>
+
+                                                @endforeach
+
+                                            </ul>
+
+                                        </div>
+
+
+                                        {{-- ========================= --}}
+                                        {{-- MIDDLE - 1 LARGE PRODUCT --}}
+                                        {{-- ========================= --}}
+                                        @if(isset($products[4]))
+
+                                            @php
+                                                $product = $products[4];
+                                            @endphp
+
+                                            <div class="col-md-6 col-wd-4 products-group-1">
+
+                                                <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
+
+                                                    <li class="col product-item remove-divider">
+
+                                                        <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
+
+                                                            <div class="product-item__inner bg-white p-3">
+
+                                                                <div class="product-item__body d-flex flex-column">
+
+                                                                    {{-- Category + Product Name --}}
+                                                                    <div class="mb-1">
+
+                                                                        <div class="mb-2">
+                                                                            <a href="{{ route('slug.handler', $category->category_slug) }}"
+                                                                            class="font-size-12 text-gray-5">
+
+                                                                                {{ $category->category_name }}
+
+                                                                            </a>
+                                                                        </div>
+
+                                                                        <h5 class="mb-0 product-item__title">
+
+                                                                            <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                            class="text-blue font-weight-bold">
+
+                                                                                {{ $product->product_name }}
+
+                                                                            </a>
+
+                                                                        </h5>
+
+                                                                    </div>
+
+
+                                                                    {{-- Large Product Image --}}
+                                                                    <div class="mb-1 min-height-4-1-4">
+
+                                                                        <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                        class="d-block text-center my-4 mt-lg-6 mb-lg-5 mt-xl-0 mb-xl-0 mt-wd-6 mb-wd-5">
+
+                                                                            <img class="img-fluid"
+                                                                                src="{{ asset($product->thumbnail) }}"
+                                                                                alt="{{ $product->product_name }}">
+
+                                                                        </a>
+
+                                                                    </div>
+
+
+                                                                    {{-- Price --}}
+                                                                    <div class="flex-center-between">
+
+                                                                        <div class="prodcut-price">
+
+                                                                            @if($product->discount_price)
+
+                                                                                <div class="text-gray-100">
+                                                                                    {{ $setting->currency }}{{ $product->discount_price }}
+                                                                                </div>
+
+                                                                            @else
+
+                                                                                <div class="text-gray-100">
+                                                                                    {{ $setting->currency }}{{ $product->selling_price }}
+                                                                                </div>
+
+                                                                            @endif
+
+                                                                        </div>
+
+
+                                                                        {{-- Add to Cart --}}
+                                                                        <div class="d-none d-xl-block prodcut-add-cart">
+
+                                                                            <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                            class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover">
+
+                                                                                <i class="ec ec-add-to-cart mr-2"></i>
+                                                                                Add to Cart
+
+                                                                            </a>
+
+                                                                        </div>
+
+                                                                    </div>
+
                                                                 </div>
-                                                                <div class="col"></div>
+
+
+                                                                {{-- Footer --}}
+                                                                <div class="product-item__footer">
+
+                                                                    <div class="border-top pt-2 flex-center-between flex-wrap">
+
+                                                                        <a href="{{ route('compare.page') }}"
+                                                                        class="text-gray-6 font-size-13">
+
+                                                                            <i class="ec ec-compare mr-1 font-size-15"></i>
+                                                                            Compare
+
+                                                                        </a>
+
+                                                                        <a href="{{ route('wishlist') }}"
+                                                                        class="text-gray-6 font-size-13">
+
+                                                                            <i class="ec ec-favorites mr-1 font-size-15"></i>
+                                                                            Add to Wishlist
+
+                                                                        </a>
+
+                                                                    </div>
+
+                                                                </div>
+
                                                             </div>
-                                                            <!-- End Gallery -->
+
                                                         </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover"><i class="ec ec-add-to-cart mr-2"></i> Add to Cart</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
+
+                                                    </li>
+
+                                                </ul>
+
                                             </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
+
+                                        @endif
+
+
+                                        {{-- ========================= --}}
+                                        {{-- RIGHT SIDE - 4 PRODUCTS --}}
+                                        {{-- ========================= --}}
+                                        <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
+
+                                            <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
+
+                                                @foreach($products->slice(5, 4) as $productIndex => $product)
+
+                                                    <li class="col-xl-6 product-item max-width-xl-100 {{ $productIndex < 2 ? 'remove-divider' : 'd-md-none d-wd-block product-item remove-divider' }}">
+
+                                                        <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
+
+                                                            <div class="product-item__inner bg-white p-3">
+
+                                                                <div class="product-item__body pb-xl-2">
+
+                                                                    {{-- Category Name --}}
+                                                                    <div class="mb-2">
+
+                                                                        <a href="{{ route('slug.handler', $category->category_slug) }}"
+                                                                        class="font-size-12 text-gray-5">
+
+                                                                            {{ $category->category_name }}
+
+                                                                        </a>
+
+                                                                    </div>
+
+
+                                                                    {{-- Product Name --}}
+                                                                    <h5 class="mb-1 product-item__title">
+
+                                                                        <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                        class="text-blue font-weight-bold">
+
+                                                                            {{ $product->product_name }}
+
+                                                                        </a>
+
+                                                                    </h5>
+
+
+                                                                    {{-- Product Image --}}
+                                                                    <div class="mb-2">
+
+                                                                        <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                        class="d-block text-center">
+
+                                                                            <img class="img-fluid"
+                                                                                src="{{ asset($product->thumbnail) }}"
+                                                                                alt="{{ $product->product_name }}">
+
+                                                                        </a>
+
+                                                                    </div>
+
+
+                                                                    {{-- Price --}}
+                                                                    <div class="flex-center-between mb-1">
+
+                                                                        <div class="prodcut-price">
+
+                                                                            @if($product->discount_price)
+
+                                                                                <div class="text-gray-100">
+                                                                                    {{ $setting->currency }}{{ $product->discount_price }}
+                                                                                </div>
+
+                                                                            @else
+
+                                                                                <div class="text-gray-100">
+                                                                                    {{ $setting->currency }}{{ $product->selling_price }}
+                                                                                </div>
+
+                                                                            @endif
+
+                                                                        </div>
+
+
+                                                                        {{-- Add to Cart --}}
+                                                                        <div class="d-none d-xl-block prodcut-add-cart">
+
+                                                                            <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                            class="btn-add-cart btn-primary transition-3d-hover">
+
+                                                                                <i class="ec ec-add-to-cart"></i>
+
+                                                                            </a>
+
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                {{-- Footer --}}
+                                                                <div class="product-item__footer">
+
+                                                                    <div class="border-top pt-2 flex-center-between flex-wrap">
+
+                                                                        <a href="{{ route('compare.page') }}"
+                                                                        class="text-gray-6 font-size-13">
+
+                                                                            <i class="ec ec-compare mr-1 font-size-15"></i>
+                                                                            Compare
+
+                                                                        </a>
+
+                                                                        <a href="{{ route('wishlist') }}"
+                                                                        class="text-gray-6 font-size-13">
+
+                                                                            <i class="ec ec-favorites mr-1 font-size-15"></i>
+                                                                            Add to Wishlist
+
+                                                                        </a>
+
+                                                                    </div>
+
+                                                                </div>
+
                                                             </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
+
                                                         </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+
+                                                    </li>
+
+                                                @endforeach
+
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+
+                                @else
+
+                                    {{-- No Product --}}
+                                    <div class="text-center py-5">
+                                        <p class="text-gray-5 mb-0">
+                                            No products available in {{ $category->category_name }}.
+                                        </p>
+                                    </div>
+
+                                @endif
+
                             </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Tpills-two-example1" role="tabpanel" aria-labelledby="Tpills-two-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Game Consoles</a></div>
-                                                            <h5 class="mb-0 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</a></h5>
-                                                        </div>
-                                                        <div class="mb-1 min-height-4-1-4">
-                                                            <a href="#" class="d-block text-center my-4 mt-lg-6 mb-lg-5 mt-xl-0 mb-xl-0 mt-wd-6 mb-wd-5"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/564X520/img2.jpg" alt="Image Description"></a>
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2 mb-3">
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img1.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #01"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img1.jpg" alt="Image Description">
 
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img2.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #02"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img2.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img3.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #03"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img3.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover"><i class="ec ec-add-to-cart mr-2"></i> Add to Cart</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Tpills-three-example1" role="tabpanel" aria-labelledby="Tpills-three-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Game Consoles</a></div>
-                                                            <h5 class="mb-0 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</a></h5>
-                                                        </div>
-                                                        <div class="mb-1 min-height-4-1-4">
-                                                            <a href="#" class="d-block text-center my-4 mt-lg-6 mb-lg-5 mt-xl-0 mb-xl-0 mt-wd-6 mb-wd-5"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/564X520/img2.jpg" alt="Image Description"></a>
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2 mb-3">
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img1.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #01"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img1.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img2.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #02"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img2.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img3.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #03"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img3.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover"><i class="ec ec-add-to-cart mr-2"></i> Add to Cart</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Tpills-four-example1" role="tabpanel" aria-labelledby="Tpills-four-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Game Consoles</a></div>
-                                                            <h5 class="mb-0 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</a></h5>
-                                                        </div>
-                                                        <div class="mb-1 min-height-4-1-4">
-                                                            <a href="#" class="d-block text-center my-4 mt-lg-6 mb-lg-5 mt-xl-0 mb-xl-0 mt-wd-6 mb-wd-5"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/564X520/img2.jpg" alt="Image Description"></a>
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2 mb-3">
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img1.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #01"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img1.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img2.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #02"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img2.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img3.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #03"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img3.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover"><i class="ec ec-add-to-cart mr-2"></i> Add to Cart</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Tpills-five-example1" role="tabpanel" aria-labelledby="Tpills-five-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Game Consoles</a></div>
-                                                            <h5 class="mb-0 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</a></h5>
-                                                        </div>
-                                                        <div class="mb-1 min-height-4-1-4">
-                                                            <a href="#" class="d-block text-center my-4 mt-lg-6 mb-lg-5 mt-xl-0 mb-xl-0 mt-wd-6 mb-wd-5"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/564X520/img2.jpg" alt="Image Description"></a>
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2 mb-3">
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img1.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #01"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img1.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img2.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #02"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img2.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img3.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #03"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img3.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover"><i class="ec ec-add-to-cart mr-2"></i> Add to Cart</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Tpills-six-example1" role="tabpanel" aria-labelledby="Tpills-six-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Game Consoles</a></div>
-                                                            <h5 class="mb-0 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</a></h5>
-                                                        </div>
-                                                        <div class="mb-1 min-height-4-1-4">
-                                                            <a href="#" class="d-block text-center my-4 mt-lg-6 mb-lg-5 mt-xl-0 mb-xl-0 mt-wd-6 mb-wd-5"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/564X520/img2.jpg" alt="Image Description"></a>
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2 mb-3">
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img1.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #01"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img1.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img2.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #02"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img2.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img3.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #03"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img3.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover"><i class="ec ec-add-to-cart mr-2"></i> Add to Cart</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Tpills-seven-example1" role="tabpanel" aria-labelledby="Tpills-seven-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Game Consoles</a></div>
-                                                            <h5 class="mb-0 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</a></h5>
-                                                        </div>
-                                                        <div class="mb-1 min-height-4-1-4">
-                                                            <a href="#" class="d-block text-center my-4 mt-lg-6 mb-lg-5 mt-xl-0 mb-xl-0 mt-wd-6 mb-wd-5"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/564X520/img2.jpg" alt="Image Description"></a>
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2 mb-3">
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img1.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #01"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img1.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img2.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #02"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img2.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img3.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #03"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img3.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover"><i class="ec ec-add-to-cart mr-2"></i> Add to Cart</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Tpills-eight-example1" role="tabpanel" aria-labelledby="Tpills-eight-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Game Consoles</a></div>
-                                                            <h5 class="mb-0 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</a></h5>
-                                                        </div>
-                                                        <div class="mb-1 min-height-4-1-4">
-                                                            <a href="#" class="d-block text-center my-4 mt-lg-6 mb-lg-5 mt-xl-0 mb-xl-0 mt-wd-6 mb-wd-5"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/564X520/img2.jpg" alt="Image Description"></a>
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2 mb-3">
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img1.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #01"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img1.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img2.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #02"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img2.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img3.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #03"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img3.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover"><i class="ec ec-add-to-cart mr-2"></i> Add to Cart</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Tpills-nine-example1" role="tabpanel" aria-labelledby="Tpills-nine-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Game Consoles</a></div>
-                                                            <h5 class="mb-0 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</a></h5>
-                                                        </div>
-                                                        <div class="mb-1 min-height-4-1-4">
-                                                            <a href="#" class="d-block text-center my-4 mt-lg-6 mb-lg-5 mt-xl-0 mb-xl-0 mt-wd-6 mb-wd-5"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/564X520/img2.jpg" alt="Image Description"></a>
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2 mb-3">
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img1.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #01"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img1.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img2.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #02"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img2.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <!-- Gallery -->
-                                                                    <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
-                                                                        data-src="{{asset('/')}}frontend/assets/img/1920X1080/img3.jpg"
-                                                                        data-fancybox="fancyboxGallery6"
-                                                                        data-caption="Electro in frames - image #03"
-                                                                        data-speed="700"
-                                                                        data-is-infinite="true">
-                                                                        <img class="img-fluid border" src="{{asset('/')}}frontend/assets/img/100X100/img3.jpg" alt="Image Description">
-
-                                                                        <span class="u-media-viewer__container">
-                                                                            <span class="u-media-viewer__icon">
-                                                                                <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                    <!-- End Gallery -->
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover"><i class="ec ec-add-to-cart mr-2"></i> Add to Cart</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img2.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img1.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
-                                                    <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                        <div class="mb-2">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="{{asset('/')}}frontend/assets/img/212X200/img7.jpg" alt="Image Description"></a>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="prodcut-price">
-                                                                <div class="text-gray-100">$685,00</div>
-                                                            </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="https://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-item__footer">
-                                                        <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                            <a href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <!-- End Tab Content -->
                 </div>
@@ -3853,2182 +1336,408 @@
                 <div class="container space-2 d-none">
                     <!-- Nav Classic -->
                     <div class="position-relative text-center z-index-2 mb-3">
-                        <ul class="nav nav-classic nav-tab nav-tab-sm px-md-3 justify-content-start justify-content-lg-center flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble border-md-down-bottom-0 pb-1 pb-lg-0 mb-n1 mb-lg-0" id="pills-tab-2" role="tablist">
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link active " id="Gpills-one-example1-tab" data-toggle="pill" href="#Gpills-one-example1" role="tab" aria-controls="Gpills-one-example1" aria-selected="true">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        Best Deals
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Gpills-two-example1-tab" data-toggle="pill" href="#Gpills-two-example1" role="tab" aria-controls="Gpills-two-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        TV & Video
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Gpills-three-example1-tab" data-toggle="pill" href="#Gpills-three-example1" role="tab" aria-controls="Gpills-three-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        Cameras
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Gpills-four-example1-tab" data-toggle="pill" href="#Gpills-four-example1" role="tab" aria-controls="Gpills-four-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        Audio
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Gpills-five-example1-tab" data-toggle="pill" href="#Gpills-five-example1" role="tab" aria-controls="Gpills-five-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        Smartphones
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Gpills-six-example1-tab" data-toggle="pill" href="#Gpills-six-example1" role="tab" aria-controls="Gpills-six-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        GPS & Navi
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Gpills-seven-example1-tab" data-toggle="pill" href="#Gpills-seven-example1" role="tab" aria-controls="Gpills-seven-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        Computers
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Gpills-eight-example1-tab" data-toggle="pill" href="#Gpills-eight-example1" role="tab" aria-controls="Gpills-eight-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        Portable Audio
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
-                                <a class="nav-link " id="Gpills-nine-example1-tab" data-toggle="pill" href="#Gpills-nine-example1" role="tab" aria-controls="Gpills-nine-example1" aria-selected="false">
-                                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                                        Accessories
-                                    </div>
-                                </a>
-                            </li>
+                        <ul class="nav nav-classic nav-tab nav-tab-sm px-md-3 justify-content-start justify-content-lg-center flex-nowrap flex-lg-wrap overflow-auto overflow-lg-visble border-md-down-bottom-0 pb-1 pb-lg-0 mb-n1 mb-lg-0"
+                            id="pills-tab-2"
+                            role="tablist">
+
+                            @foreach($home_category as $key => $category)
+                                <li class="nav-item flex-shrink-0 flex-lg-shrink-1">
+
+                                    <a class="nav-link {{ $key == 0 ? 'active' : '' }}"
+                                    id="Gpills-category-{{ $category->id }}-tab"
+                                    data-toggle="pill"
+                                    href="#Gpills-category-{{ $category->id }}"
+                                    role="tab"
+                                    aria-controls="Gpills-category-{{ $category->id }}"
+                                    aria-selected="{{ $key == 0 ? 'true' : 'false' }}">
+
+                                        <div class="d-md-flex justify-content-md-center align-items-md-center">
+                                            {{ $category->category_name }}
+                                        </div>
+
+                                    </a>
+
+                                </li>
+                            @endforeach
+
                         </ul>
                     </div>
                     <!-- End Nav Classic -->
 
                     <!-- Tab Content -->
                     <div class="tab-content" id="Gpills-tabContent">
-                        <div class="tab-pane fade pt-2 show active" id="Gpills-one-example1" role="tabpanel" aria-labelledby="Gpills-one-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2">
-                                                                <div class="bg-gray-1 bg-animation rounded height-10 w-40"></div>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 mb-1 w-90"></div>
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-450"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2">
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
+
+                        @foreach($home_category as $categoryIndex => $category)
+
+                            @php
+                                $products = $category->products->take(9);
+                            @endphp
+
+                            <div class="tab-pane fade pt-2 {{ $categoryIndex == 0 ? 'show active' : '' }}"
+                                id="Gpills-category-{{ $category->id }}"
+                                role="tabpanel"
+                                aria-labelledby="Gpills-category-{{ $category->id }}-tab">
+
+                                @if($products->count() > 0)
+
+                                    <div class="row no-gutters">
+
+                                        {{-- LEFT SIDE --}}
+                                        <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
+
+                                            <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
+
+                                                @foreach($products->slice(0, 4) as $productIndex => $product)
+
+                                                    <li class="col-xl-12 col-wd-6 {{ $productIndex >= 2 ? 'd-md-none d-wd-block' : '' }}">
+
+                                                        <div class="h-100 w-100 prodcut-box-shadow">
+
+                                                            <div class="bg-white p-3">
+
+                                                                <div class="pb-xl-2">
+
+                                                                    {{-- Category --}}
+                                                                    <div class="mb-2">
+                                                                        <a href="{{ route('slug.handler', $category->category_slug) }}"
+                                                                        class="font-size-12 text-gray-5">
+                                                                            {{ $category->category_name }}
+                                                                        </a>
+                                                                    </div>
+
+                                                                    {{-- Product Name --}}
+                                                                    <div class="mb-3">
+                                                                        <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                        class="text-gray-90">
+
+                                                                            <h5 class="mb-1 product-item__title">
+                                                                                {{ Str::limit($product->product_name, 45) }}
+                                                                            </h5>
+
+                                                                        </a>
+                                                                    </div>
+
+                                                                    {{-- Product Image --}}
+                                                                    <div class="mb-4">
+
+                                                                        <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                        class="d-block text-center">
+
+                                                                            <img class="img-fluid"
+                                                                                src="{{ asset($product->thumbnail) }}"
+                                                                                alt="{{ $product->product_name }}"
+                                                                                style="width: 212px; height: 200px; object-fit: contain;">
+
+                                                                        </a>
+
+                                                                    </div>
+
+                                                                    {{-- Price --}}
+                                                                    <div class="flex-center-between mb-1">
+
+                                                                        <div class="price">
+
+                                                                            @if($product->discount_price)
+                                                                                <span class="text-gray-100 font-size-18">
+                                                                                    {{ $setting->currency }}{{ $product->discount_price }}
+                                                                                </span>
+
+                                                                                <del class="font-size-12 text-gray-5 ml-1">
+                                                                                    {{ $setting->currency }}{{ $product->selling_price }}
+                                                                                </del>
+                                                                            @else
+                                                                                <span class="text-gray-100 font-size-18">
+                                                                                    {{ $setting->currency }}{{ $product->selling_price }}
+                                                                                </span>
+                                                                            @endif
+
+                                                                        </div>
+
+                                                                        {{-- Add Cart --}}
+                                                                        <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                        class="d-block font-size-20 text-gray-90"
+                                                                        data-toggle="tooltip"
+                                                                        data-placement="top"
+                                                                        title="Add to Cart">
+
+                                                                            <span class="ec ec-add-to-cart"></span>
+
+                                                                        </a>
+
+                                                                    </div>
+
                                                                 </div>
 
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </li>
+
+                                                @endforeach
+
+                                            </ul>
+
+                                        </div>
+
+
+                                        {{-- MIDDLE LARGE PRODUCT --}}
+                                        @if(isset($products[4]))
+
+                                            @php
+                                                $product = $products[4];
+                                            @endphp
+
+                                            <div class="col-md-6 col-wd-4 products-group-1">
+
+                                                <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
+
+                                                    <li class="col product-item remove-divider">
+
+                                                        <div class="h-100 w-100 prodcut-box-shadow">
+
+                                                            <div class="bg-white p-3">
+
+                                                                <div class="d-flex flex-column">
+
+                                                                    {{-- Category --}}
+                                                                    <div class="mb-1">
+
+                                                                        <div class="mb-2">
+
+                                                                            <a href="{{ route('slug.handler', $category->category_slug) }}"
+                                                                            class="font-size-12 text-gray-5">
+
+                                                                                {{ $category->category_name }}
+
+                                                                            </a>
+
+                                                                        </div>
+
+                                                                        {{-- Product Name --}}
+                                                                        <div class="mb-3">
+
+                                                                            <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                            class="text-gray-90">
+
+                                                                                <h5 class="mb-1 product-item__title">
+                                                                                    {{ Str::limit($product->product_name, 60) }}
+                                                                                </h5>
+
+                                                                            </a>
+
+                                                                        </div>
+
+                                                                    </div>
+
+
+                                                                    {{-- Large Product Image --}}
+                                                                    <div class="mb-4">
+
+                                                                        <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                        class="d-block text-center">
+
+                                                                            <img class="img-fluid"
+                                                                                src="{{ asset($product->thumbnail) }}"
+                                                                                alt="{{ $product->product_name }}"
+                                                                                style="width: 564px; height: 450px; object-fit: contain;">
+
+                                                                        </a>
+
+                                                                    </div>
+
+
+                                                                    {{-- Gallery --}}
+                                                                    <div class="mb-4">
+
+                                                                        <div class="row mx-gutters-2">
+
+                                                                            <div class="col">
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                    </div>
+
+
+                                                                    {{-- Price + Add Cart --}}
+                                                                    <div class="flex-center-between">
+
+                                                                        <div class="price">
+
+                                                                            @if($product->discount_price)
+
+                                                                                <span class="text-gray-100 font-size-18">
+                                                                                    {{ $setting->currency }}{{ $product->discount_price }}
+                                                                                </span>
+
+                                                                                <del class="font-size-12 text-gray-5 ml-1">
+                                                                                    {{ $setting->currency }}{{ $product->selling_price }}
+                                                                                </del>
+
+                                                                            @else
+
+                                                                                <span class="text-gray-100 font-size-18">
+                                                                                    {{ $setting->currency }}{{ $product->selling_price }}
+                                                                                </span>
+
+                                                                            @endif
+
+                                                                        </div>
+
+
+                                                                        <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                        class="btn btn-primary rounded-pill px-4">
+
+                                                                            Add to Cart
+
+                                                                        </a>
+
+                                                                    </div>
+
                                                                 </div>
 
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-                                                                <div class="col"></div>
                                                             </div>
-                                                            <!-- End Gallery -->
+
                                                         </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-40"></div>
-                                                            <div class="bg-gray-1 height-35 width-134 rounded-pill"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+
+                                                    </li>
+
+                                                </ul>
+
                                             </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
+
+                                        @endif
+
+
+                                        {{-- RIGHT SIDE --}}
+                                        <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
+
+                                            <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
+
+                                                @foreach($products->slice(5, 4) as $productIndex => $product)
+
+                                                    <li class="col-xl-12 col-wd-6 {{ $productIndex >= 2 ? 'd-md-none d-wd-block' : '' }}">
+
+                                                        <div class="h-100 w-100 prodcut-box-shadow">
+
+                                                            <div class="bg-white p-3">
+
+                                                                <div class="pb-xl-2">
+
+                                                                    {{-- Category --}}
+                                                                    <div class="mb-2">
+
+                                                                        <a href="{{ route('slug.handler', $category->category_slug) }}"
+                                                                        class="font-size-12 text-gray-5">
+
+                                                                            {{ $category->category_name }}
+
+                                                                        </a>
+
+                                                                    </div>
+
+
+                                                                    {{-- Product Name --}}
+                                                                    <div class="mb-3">
+
+                                                                        <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                        class="text-gray-90">
+
+                                                                            <h5 class="mb-1 product-item__title">
+                                                                                {{ Str::limit($product->product_name, 45) }}
+                                                                            </h5>
+
+                                                                        </a>
+
+                                                                    </div>
+
+
+                                                                    {{-- Product Image --}}
+                                                                    <div class="mb-4">
+
+                                                                        <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                        class="d-block text-center">
+
+                                                                            <img class="img-fluid"
+                                                                                src="{{ asset($product->thumbnail) }}"
+                                                                                alt="{{ $product->product_name }}"
+                                                                                style="width: 212px; height: 200px; object-fit: contain;">
+
+                                                                        </a>
+
+                                                                    </div>
+
+
+                                                                    {{-- Price --}}
+                                                                    <div class="flex-center-between mb-1">
+
+                                                                        <div class="price">
+
+                                                                            @if($product->discount_price)
+
+                                                                                <span class="text-gray-100 font-size-18">
+                                                                                    {{ $setting->currency }}{{ $product->discount_price }}
+                                                                                </span>
+
+                                                                                <del class="font-size-12 text-gray-5 ml-1">
+                                                                                    {{ $setting->currency }}{{ $product->selling_price }}
+                                                                                </del>
+
+                                                                            @else
+
+                                                                                <span class="text-gray-100 font-size-18">
+                                                                                    {{ $setting->currency }}{{ $product->selling_price }}
+                                                                                </span>
+
+                                                                            @endif
+
+                                                                        </div>
+
+
+                                                                        {{-- Add Cart --}}
+                                                                        <a href="{{ route('product.details', $product->product_slug) }}"
+                                                                        class="d-block font-size-20 text-gray-90"
+                                                                        data-toggle="tooltip"
+                                                                        data-placement="top"
+                                                                        title="Add to Cart">
+
+                                                                            <span class="ec ec-add-to-cart"></span>
+
+                                                                        </a>
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
                                                         </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+
+                                                    </li>
+
+                                                @endforeach
+
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+
+                                @else
+
+                                    <div class="text-center py-5">
+                                        <p class="text-gray-5 mb-0">
+                                            No products available in {{ $category->category_name }}.
+                                        </p>
+                                    </div>
+
+                                @endif
+
                             </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Gpills-two-example1" role="tabpanel" aria-labelledby="Gpills-two-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2">
-                                                                <div class="bg-gray-1 bg-animation rounded height-10 w-40"></div>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 mb-1 w-90"></div>
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-450"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2">
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
 
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
+                        @endforeach
 
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-40"></div>
-                                                            <div class="bg-gray-1 height-35 width-134 rounded-pill"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Gpills-three-example1" role="tabpanel" aria-labelledby="Gpills-three-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2">
-                                                                <div class="bg-gray-1 bg-animation rounded height-10 w-40"></div>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 mb-1 w-90"></div>
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-450"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2">
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-40"></div>
-                                                            <div class="bg-gray-1 height-35 width-134 rounded-pill"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Gpills-four-example1" role="tabpanel" aria-labelledby="Gpills-four-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2">
-                                                                <div class="bg-gray-1 bg-animation rounded height-10 w-40"></div>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 mb-1 w-90"></div>
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-450"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2">
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-40"></div>
-                                                            <div class="bg-gray-1 height-35 width-134 rounded-pill"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Gpills-five-example1" role="tabpanel" aria-labelledby="Gpills-five-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2">
-                                                                <div class="bg-gray-1 bg-animation rounded height-10 w-40"></div>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 mb-1 w-90"></div>
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-450"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2">
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-40"></div>
-                                                            <div class="bg-gray-1 height-35 width-134 rounded-pill"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Gpills-six-example1" role="tabpanel" aria-labelledby="Gpills-six-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2">
-                                                                <div class="bg-gray-1 bg-animation rounded height-10 w-40"></div>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 mb-1 w-90"></div>
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-450"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2">
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-40"></div>
-                                                            <div class="bg-gray-1 height-35 width-134 rounded-pill"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Gpills-seven-example1" role="tabpanel" aria-labelledby="Gpills-seven-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2">
-                                                                <div class="bg-gray-1 bg-animation rounded height-10 w-40"></div>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 mb-1 w-90"></div>
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-450"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2">
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-40"></div>
-                                                            <div class="bg-gray-1 height-35 width-134 rounded-pill"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Gpills-eight-example1" role="tabpanel" aria-labelledby="Gpills-eight-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2">
-                                                                <div class="bg-gray-1 bg-animation rounded height-10 w-40"></div>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 mb-1 w-90"></div>
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-450"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2">
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-40"></div>
-                                                            <div class="bg-gray-1 height-35 width-134 rounded-pill"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade pt-2" id="Gpills-nine-example1" role="tabpanel" aria-labelledby="Gpills-nine-example1-tab">
-                            <div class="row no-gutters">
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-wd-4 products-group-1">
-                                    <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
-                                        <li class="col product-item remove-divider">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="mb-1">
-                                                            <div class="mb-2">
-                                                                <div class="bg-gray-1 bg-animation rounded height-10 w-40"></div>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 mb-1 w-90"></div>
-                                                                <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-450"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <!-- Gallery -->
-                                                            <div class="row mx-gutters-2">
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <div class="bg-gray-1 width-60 height-60"></div>
-                                                                </div>
-                                                                <div class="col"></div>
-                                                            </div>
-                                                            <!-- End Gallery -->
-                                                        </div>
-                                                        <div class="flex-center-between">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-40"></div>
-                                                            <div class="bg-gray-1 height-35 width-134 rounded-pill"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 w-100">
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xl-12 col-wd-6 d-md-none d-wd-block">
-                                            <div class="h-100 w-100 prodcut-box-shadow">
-                                                <div class="bg-white p-3">
-                                                    <div class="pb-xl-2">
-                                                        <div class="mb-2">
-                                                            <div class="bg-gray-1 bg-animation rounded height-10 w-60"></div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 mb-1"></div>
-                                                            <div class="bg-gray-1 bg-animation rounded height-12 w-80"></div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="bg-gray-1 height-190"></div>
-                                                        </div>
-                                                        <div class="flex-center-between mb-1">
-                                                            <div class="bg-gray-1 bg-animation rounded height-20 w-60"></div>
-                                                            <div class="bg-gray-1 height-35 width-35 rounded-circle"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <!-- End Tab Content -->
                 </div>
